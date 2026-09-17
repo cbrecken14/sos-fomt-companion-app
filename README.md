@@ -28,7 +28,44 @@ whole extracted folder together; the `.exe` needs the other files next to it.
 - Villager, Animal, and Marriage Candidate viewers
 - A Reminders dashboard: festivals, birthdays, shop hours, crop watering/harvest status, and more
 - A lightweight always-on-top overlay for showing a chosen value directly over the game
-- A handful of optional single-player cheats (all off by default, toggled in Preferences)
+- A handful of optional single-player cheats (all off by default, toggled in File → Cheats...)
+
+## Screenshots
+
+**Reminders** — today's events, shop hours, crop status, and a day-by-day lookahead
+
+![Reminders](screenshots/full-app.png)
+
+**Player Notes** — a personal per-day notebook, shown right alongside the other reminders
+
+![Reminders with Player Notes](screenshots/reminders-with-player-notes.png)
+![Player Notes editor](screenshots/player-notes.png)
+
+**Villagers, Marriage Candidates, Harvest Sprites & Animals**
+
+![Villagers and Marriage Candidates](screenshots/reminders-villagers-marriage-candidates.png)
+![Harvest Sprites and Animals](screenshots/reminders-harvest-sprites-animals.png)
+
+**Available & Future Events** — upcoming heart events, festivals, and harvest/breeding milestones
+
+![Available and Future Events](screenshots/reminders-available-future-events.png)
+
+**Farm Map** — live crop growth and watering status overlaid on your farm
+
+![Farm Map](screenshots/farm-map.png)
+
+**Mine Floor Map** — live floor contents, and a heads-up when a rare spawn (like a Pink Diamond) is on the current floor
+
+![Mine Floor Map](screenshots/mine-floor-map-medium.png)
+![Mine Floor Map with rare spawn alert](screenshots/mine-floor-map-rare-spawn.png)
+
+**Overlay** — a chosen value shown directly over the game window
+
+![Fatigue overlay](screenshots/fatigue-overlay.png)
+
+**Optional cheats** — off by default; example shown is Guaranteed Ground Item Spawn
+
+![Guaranteed Ground Item Spawn](screenshots/guaranteed-ground-item-spawn.png)
 
 ## Requirements
 
