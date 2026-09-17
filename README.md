@@ -38,7 +38,6 @@ whole extracted folder together; the `.exe` needs the other files next to it.
 
 **Player Notes** — a personal per-day notebook, shown right alongside the other reminders
 
-![Reminders with Player Notes](screenshots/reminders-with-player-notes.png)
 ![Player Notes editor](screenshots/player-notes.png)
 
 **Villagers, Marriage Candidates, Harvest Sprites & Animals**
