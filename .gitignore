@@ -1,0 +1,9 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Build output (created when packaging the .exe)
+build/
+dist/
+*.spec

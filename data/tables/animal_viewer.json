@@ -1,0 +1,13 @@
+{
+  "KNOWN_FIELDS": [
+    { "name": "Name (Secondary)", "offset": 0, "type": "utf16", "length": 12, "size": 24 },
+    { "name": "Name", "offset": 132, "type": "utf32", "length": 8, "size": 32 },
+    { "name": "Age (Days)", "offset": 392, "size": 4 },
+    { "name": "Daily Interaction (bitflags)", "offset": 396, "size": 4, "calc": "dailyInteraction" },
+    { "name": "Affection", "offset": 400, "size": 4 },
+    { "name": "Affection Bonus (Breeding)", "offset": 404, "size": 4 },
+    { "name": "Days Fed (Produce Threshold)", "offset": 408, "size": 4 },
+    { "name": "Fed Today", "offset": 412, "size": 1, "calc": "yesNo", "verified": false },
+    { "name": "Fed Yesterday (Egg Ready)", "offset": 413, "size": 1, "calc": "yesNo", "verified": false }
+  ]
+}

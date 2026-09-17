@@ -1,0 +1,17 @@
+{
+  "_source": "In-game Affection heart reference (FOMT Animal Affection).",
+  "_note": "Converts an animal's raw Affection Points memory value (see data/pointer_map.md's 'Animal (Coop/Barn) struct' section, +0x188, u32) into its displayed heart count (0-10). Same ascending-minimum lookup convention as friendship_notes.json: find the tier with the LARGEST 'min_affection' that is <= the value. Conditions/Byproduct columns from the source reference are intentionally omitted -- not needed for the heart-count lookup.",
+  "ANIMAL_AFFECTION_HEARTS": [
+    { "hearts": 0, "min_affection": 0 },
+    { "hearts": 1, "min_affection": 25 },
+    { "hearts": 2, "min_affection": 50 },
+    { "hearts": 3, "min_affection": 75 },
+    { "hearts": 4, "min_affection": 100 },
+    { "hearts": 5, "min_affection": 125 },
+    { "hearts": 6, "min_affection": 150 },
+    { "hearts": 7, "min_affection": 175 },
+    { "hearts": 8, "min_affection": 200 },
+    { "hearts": 9, "min_affection": 225 },
+    { "hearts": 10, "min_affection": 250 }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "_source": "https://stratswiki.com/sos-fomt/shops/general-store/",
+  "_note": "Static wiki reference data: the General Store's cooking ingredients section (available year-round). Not memory-derived. Used to cross-reference villagers' loved/liked 'Miscellaneous' gift items against what's actually purchasable as an ingredient (see villagers.json's 'Loved Ingredients'/'Liked Ingredients' fields).",
+  "COOKING_INGREDIENTS": [
+    { "name": "Curry Powder", "cost": 50 },
+    { "name": "Wheat Flour", "cost": 50 },
+    { "name": "Oil", "cost": 50 },
+    { "name": "Bread", "cost": 100 },
+    { "name": "Chocolate", "cost": 100 },
+    { "name": "Dango Flour", "cost": 100 },
+    { "name": "Onigiri", "cost": 100 }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "_source": "https://stratswiki.com/sos-fomt/game-mechanics/lp-heart-levels/",
+  "_note": "Static wiki reference data: converts a villager's raw Love Points (LP) memory value into its Heart Color. Stored as ascending tier MINIMUMS only (not min/max ranges) -- to look up a color for a given LP value, find the tier with the LARGEST 'min_lp' that is <= the value. This sidesteps an apparent wiki inconsistency: Gray/Purple/Blue/Green's upper bounds are stated as '...999' (e.g. Blue = 20,000-29,999) but Yellow and Orange are stated as '...000' (Yellow = 40,000-49,000, Orange = 50,000-59,000) -- likely a wiki typo (should probably be 49,999/59,999 to match the pattern), but using min-only thresholds makes the lookup correct either way with no dead zone between tiers. 'unlocks' is extra context from the same table, not needed for the LP->color lookup itself.",
+  "HEART_LEVELS": [
+    { "color": "Gray", "min_lp": 0, "unlocks": "Heart Event" },
+    { "color": "Purple", "min_lp": 10000, "unlocks": "Heart Event" },
+    { "color": "Blue", "min_lp": 20000, "unlocks": "Heart Event, Sunsweet Flower Event" },
+    { "color": "Green", "min_lp": 30000, "unlocks": "Heart Event, Preserved Flower (dating)" },
+    { "color": "Yellow", "min_lp": 40000, "unlocks": "Heart Event" },
+    { "color": "Orange", "min_lp": 50000, "unlocks": "Heart Event, Blue Feather unlocked (1,000 G)" },
+    { "color": "Red", "min_lp": 60000, "unlocks": "Heart Event, Proposal + Marriage" }
+  ]
+}

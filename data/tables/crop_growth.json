@@ -1,0 +1,29 @@
+{
+  "_source": "Live memory dump of the game's own growth-stage table.",
+  "_note": "The game's own static per-crop growth-stage table -- module offset exe+0x5F2AA0, int32 entries, 21 per crop (indexed growthTable[cropTypeIndex * 21 + timesWatered], see data/pointer_map.md's 'Tile struct fields' section). GROWTH_TABLE[id] is a 21-entry list: GROWTH_TABLE[id][timesWatered] = the tile's occupant/stage value once that crop has been watered `timesWatered` times since planting (index 0 = freshly planted, not yet watered -- every row starts at 1, matching PLANTED_SEED_STAGE). Trailing 0s past a row's own harvest-ready value aren't real stage values -- the table has no more meaningful entries for that crop past the point it's fully grown (a stage of literal 0 would mean 'empty tile', never a real occupant value once something's planted). Every one of the 23 confirmed real crop-type ids (0-22, data/tables/crops.json) tops out at stage 5 -- growth curves are NOT linear (some jump straight from e.g. stage 2 to 3 to 4 over several waterings each), so 'days left' predictions must walk this table, not just subtract from crops.json's 'growth' day count. Matches crops.json's 'growth' field (days) exactly for every crop EXCEPT id 22 (Sunsweet Flower, crops.json says 11, this table implies 10 waterings to reach stage 5) -- likely a small wiki inaccuracy in crops.json's growth value, not an error in this table (every other row matched perfectly); not corrected in crops.json without further confirmation since it doesn't affect anything reading this table directly. CONFIRMED LIVE: stage 5 is the universal 'ready to harvest' threshold for every crop, superseding the old 'Turnip seen at occupant==10 in the wild' note as a mix-up (most likely misreading the separate +0x0C times-watered counter, which legitimately reaches double digits, instead of occupant itself). A crop with fewer than 5 visually-distinct growth phases can look identical at stage 4 and stage 5 while still refusing to harvest until it's really 5 -- harvest-readiness must check occupant directly, never infer it from the sprite. Also confirmed: writing +0x0C directly does nothing on its own (no visible effect on occupant or harvestability) since nothing re-triggers the game's own daily growth-update function -- it only matters for a genuine 'days until harvest' SIMULATION (walking this table forward from a tile's current +0x0C), never for forcing a stage change directly. CONFIRMED CORRECT DAY-BY-DAY LIVE: planted one seed of every crop, watered all of them every real day, exported a snapshot daily for 16 real days -- every Spring crop (ids 0/1/2/3/4/17/21, the only ones that survive being planted in Spring) matched this table's row EXACTLY for every single day of data, not just at the final stage-5 ceiling, and +0x0C was confirmed to stop incrementing the instant occupant reached 5 even though watering continued. Non-Spring crops die after one day if planted out of season (a real game feature, not a bug). See data/pointer_map.md's 'Growth table' section for the full write-up, including a lead on +0xE (flips -1 -> 0 the exact day a crop reaches stage 5, likely a yield/quality-roll byte).",
+  "GROWTH_TABLE": {
+    "0": [1, 1, 2, 2, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "1": [1, 1, 1, 2, 2, 2, 2, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "2": [1, 1, 1, 1, 2, 2, 2, 3, 3, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "3": [1, 1, 1, 2, 2, 2, 3, 3, 3, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "4": [1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 5, 0, 0, 0, 0, 0, 0],
+    "5": [1, 1, 2, 2, 3, 3, 4, 4, 4, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "6": [1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 5, 0, 0, 0, 0, 0, 0],
+    "7": [1, 1, 1, 2, 2, 2, 2, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "8": [1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 5, 0, 0, 0, 0, 0, 0],
+    "9": [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5],
+    "10": [1, 1, 1, 2, 2, 2, 3, 3, 3, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "11": [1, 1, 1, 2, 2, 2, 2, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "12": [1, 1, 1, 2, 2, 2, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "13": [1, 1, 2, 2, 2, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "14": [1, 1, 2, 3, 3, 4, 4, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "15": [1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "16": [1, 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 5, 0, 0, 0, 0, 0, 0, 0, 0],
+    "17": [1, 1, 2, 2, 3, 3, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "18": [1, 1, 2, 2, 3, 3, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "19": [1, 1, 1, 2, 2, 2, 3, 3, 4, 4, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "20": [1, 1, 1, 2, 2, 2, 3, 3, 4, 4, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "21": [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 0, 0, 0, 0, 0, 0, 0, 0],
+    "22": [1, 1, 1, 2, 2, 2, 3, 3, 4, 4, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  }
+}

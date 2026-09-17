@@ -1,0 +1,26 @@
+{
+  "_source": "https://stratswiki.com/sos-fomt/game-mechanics/stamina-fatigue/",
+  "_note": "Static wiki reference data: constants for a future 'what would my stamina/fatigue be tomorrow if I went to bed now' calculation. Not a row-per-entry table -- stored as named constants since the actual value needed is a formula, not a lookup. Base sleep recovery verified against the wiki's own worked example: going to bed at 5:00 AM (1 hour until the fixed 6:00 AM wake time) gives +57 STA and -7 FAT, matching stamina_change_base + stamina_change_per_hour_of_sleep*1 = 50+7=57 and fatigue_change_base + fatigue_change_per_hour_of_sleep*1 = -5+-2=-7. Formula sketch (not yet implemented): hours_of_sleep = hours between bedtime and wake_up_hour (wrapping past midnight); new_stamina = current_stamina + stamina_change_base + stamina_change_per_hour_of_sleep*hours_of_sleep + (flower vase stamina_change if applicable); new_fatigue = current_fatigue + fatigue_change_base + fatigue_change_per_hour_of_sleep*hours_of_sleep + (flower vase fatigue_change if applicable); both then clamped to [0, max_stamina]/[0, max_fatigue]. max_stamina_base/max_fatigue found on this same page while reading it for the Flower Vase section, resolving an earlier 'no known cap' gap. max_fatigue (100) reads as a hard, unchanging cap. max_stamina is NOT flat, though: the real mechanism raising it over time is Power Berries Found (a live memory value, `data/pointer_map.md` +0xC090), each worth +15 -- see SLEEP_RECOVERY_CONSTANTS' max_stamina_per_power_berry and its _max_stamina_note. This supersedes the page's own 'Upgrading Tools for Stamina' section as the explanation for the rising cap. MEMORY OPEN ITEM: still need to find live memory values for (a) whether the Flower Vase has been purchased, (b) which flower (if any) is currently placed in it, and (c) however 'Bloom Time' actually gates the bonus (best inference below, not confirmed) -- none of this is in data/pointer_map.md yet, needs live investigation like the crop-type/animal-species ID gaps already noted elsewhere.",
+  "SLEEP_RECOVERY_CONSTANTS": {
+    "wake_up_hour": 6,
+    "stamina_change_base": 50,
+    "stamina_change_per_hour_of_sleep": 7,
+    "fatigue_change_base": -5,
+    "fatigue_change_per_hour_of_sleep": -2,
+    "max_stamina_base": 150,
+    "max_stamina_per_power_berry": 15,
+    "max_fatigue": 100,
+    "_max_stamina_note": "Real max Stamina = max_stamina_base + max_stamina_per_power_berry * power_berries_found. power_berries_found is now a live value -- see data/pointer_map.md's Player-state struct table, +0x3B0 (corrected from an initially wrong +0xC090 -- see that table's note on the offset bug). This resolves the earlier 'tool upgrades raise the cap, not yet catalogued' gap: the mechanism is Power Berries, not tool upgrades. The old 'max_stamina_at_start' key (flat 150) is superseded -- don't use it, it undercounts the cap for any player who has found at least one Power Berry."
+  },
+  "FLOWER_VASE": {
+    "_note": "Placing one of these flowers in the (purchasable, one-time) Flower Vase before sleeping adds this bonus to the sleep-recovery formula above, on top of the base stamina/fatigue change. 'bloom_time_days' is the wiki's own column; my best inference is it's how many nights a placed flower keeps giving its bonus before it needs replacing (the source text doesn't explicitly say what it governs -- flagged, not confirmed). Vase acquisition itself (bought from Huang for 5,000+ G, offered on Spring 11 of Year 1, also one of Huang's marriage requirements) is one-time setup, not part of the nightly formula, so not stored as a constant here.",
+    "flowers": [
+      { "flower": "Sunsweet Flower", "stamina_change": 0, "fatigue_change": -20, "bloom_time_days": 2 },
+      { "flower": "Moondrop Flower", "stamina_change": 10, "fatigue_change": 0, "bloom_time_days": 7 },
+      { "flower": "True Magic Red Flower", "stamina_change": 0, "fatigue_change": -10, "bloom_time_days": 5, "notes": "Wiki calls this row 'Red Magic Flower' and its own link (likely a wiki bug) points to the same URL as 'Blue Magic Flower' below. Renamed here to 'True Magic Red Flower' -- confirmed correct: Magic Red Flower seeds usually grow Blue Magic Red Flower, with a small chance of the rarer, more valuable True Magic Red Flower instead. They're genuinely different items/vase entries, not two names for the same flower." },
+      { "flower": "Toy Flower", "stamina_change": 0, "fatigue_change": -7, "bloom_time_days": 5 },
+      { "flower": "Pink Cat Flower", "stamina_change": 0, "fatigue_change": -5, "bloom_time_days": 5 },
+      { "flower": "Blue Magic Red Flower", "stamina_change": 3, "fatigue_change": 0, "bloom_time_days": 10 }
+    ]
+  }
+}

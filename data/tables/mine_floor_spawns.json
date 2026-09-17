@@ -1,0 +1,76 @@
+{
+  "_source": "https://stratswiki.com/sos-fomt/items/mine-items/ and its sub-pages (goddess-jewels, goddess-statue, nature-sprite-statue, mythic-ore, tomatosetta-stone, pink-diamonds, kappa-statue, alexandrite), plus https://stratswiki.com/sos-fomt/secrets/cursed-tools/ and https://stratswiki.com/sos-fomt/tools/travel-stone/",
+  "_note": "Static wiki reference data for the Mine Floor Map window -- additional special-item spawn info per floor, layered on top of the regular ore/gem grid. Not every mine item has an entry here, only a curated subset. 'mine' is 'Spring' or 'Lake'. 'method' is 'Break Rocks' or 'Hoe Dirt'. 'floor_min'/'floor_max' (inclusive) replace a plain single 'floor' number so every row -- single floor, contiguous range, or one row of a scattered discrete list -- supports the same lookup: is a given floor >= floor_min and <= floor_max. A scattered list of specific floors (Goddess Jewel, most of Mythic Ore/Pink Diamond) is stored as one row per floor (floor_min == floor_max); a genuinely contiguous run (Goddess Statue, Nature Sprite Statue, Kappa Statue, and the tail end of Mythic Ore/Pink Diamond) is one row spanning it. 'asset_image' is a filename in assets/ore_icons/ (or assets/cursed_tool_icons/ for the 6 Cursed Tools) -- existing files there were never overwritten, only missing ones were downloaded new. Requirement text is empty ('') where there's no requirement, distinct from null which isn't used in this table.",
+  "MINE_FLOOR_SPAWNS": [
+    { "item": "Cursed Axe", "asset_image": "cursed_tool_icons/cursed_axe.png", "mine": "Lake", "floor_min": 49, "floor_max": 49, "method": "Hoe Dirt", "requirement": "Have all your tools upgraded to Mithril status" },
+    { "item": "Cursed Fishing Rod", "asset_image": "cursed_tool_icons/cursed_fishing_rod.png", "mine": "Lake", "floor_min": 29, "floor_max": 29, "method": "Hoe Dirt", "requirement": "Have all your tools upgraded to Mithril status" },
+    { "item": "Cursed Hammer", "asset_image": "cursed_tool_icons/cursed_hammer.png", "mine": "Lake", "floor_min": 59, "floor_max": 59, "method": "Hoe Dirt", "requirement": "Have all your tools upgraded to Mithril status" },
+    { "item": "Cursed Hoe", "asset_image": "cursed_tool_icons/cursed_hoe.png", "mine": "Lake", "floor_min": 39, "floor_max": 39, "method": "Hoe Dirt", "requirement": "Have all your tools upgraded to Mithril status" },
+    { "item": "Cursed Sickle", "asset_image": "cursed_tool_icons/cursed_sickle.png", "mine": "Lake", "floor_min": 79, "floor_max": 79, "method": "Hoe Dirt", "requirement": "Have all your tools upgraded to Mithril status" },
+    { "item": "Cursed Watering Can", "asset_image": "cursed_tool_icons/cursed_watering_can.png", "mine": "Lake", "floor_min": 69, "floor_max": 69, "method": "Hoe Dirt", "requirement": "Have all your tools upgraded to Mithril status" },
+
+    { "item": "Kappa Jewel", "asset_image": "ore_icons/kappa_jewel.png", "mine": "Lake", "floor_min": 0, "floor_max": 0, "method": "Break Rocks", "requirement": "", "notes": "Wiki literally lists this floor as 'Level 0' (verified against raw HTML, not a scraping error). Collecting all 9 Kappa Jewels grants the Kappa Treasure tool (see https://stratswiki.com/sos-fomt/tools/kappa-treasure/) -- that's a downstream reward, not a per-jewel requirement" },
+    { "item": "Kappa Jewel", "asset_image": "ore_icons/kappa_jewel.png", "mine": "Lake", "floor_min": 40, "floor_max": 40, "method": "Break Rocks", "requirement": "" },
+    { "item": "Kappa Jewel", "asset_image": "ore_icons/kappa_jewel.png", "mine": "Lake", "floor_min": 60, "floor_max": 60, "method": "Break Rocks", "requirement": "" },
+    { "item": "Kappa Jewel", "asset_image": "ore_icons/kappa_jewel.png", "mine": "Lake", "floor_min": 80, "floor_max": 80, "method": "Break Rocks", "requirement": "" },
+    { "item": "Kappa Jewel", "asset_image": "ore_icons/kappa_jewel.png", "mine": "Lake", "floor_min": 120, "floor_max": 120, "method": "Break Rocks", "requirement": "" },
+    { "item": "Kappa Jewel", "asset_image": "ore_icons/kappa_jewel.png", "mine": "Lake", "floor_min": 140, "floor_max": 140, "method": "Break Rocks", "requirement": "" },
+    { "item": "Kappa Jewel", "asset_image": "ore_icons/kappa_jewel.png", "mine": "Lake", "floor_min": 160, "floor_max": 160, "method": "Break Rocks", "requirement": "" },
+    { "item": "Kappa Jewel", "asset_image": "ore_icons/kappa_jewel.png", "mine": "Lake", "floor_min": 180, "floor_max": 180, "method": "Break Rocks", "requirement": "" },
+    { "item": "Kappa Jewel", "asset_image": "ore_icons/kappa_jewel.png", "mine": "Lake", "floor_min": 255, "floor_max": 255, "method": "Break Rocks", "requirement": "" },
+
+    { "item": "Goddess Jewel", "asset_image": "ore_icons/goddess_jewel.png", "mine": "Spring", "floor_min": 60, "floor_max": 60, "method": "Break Rocks", "requirement": "" },
+    { "item": "Goddess Jewel", "asset_image": "ore_icons/goddess_jewel.png", "mine": "Spring", "floor_min": 102, "floor_max": 102, "method": "Break Rocks", "requirement": "" },
+    { "item": "Goddess Jewel", "asset_image": "ore_icons/goddess_jewel.png", "mine": "Spring", "floor_min": 123, "floor_max": 123, "method": "Break Rocks", "requirement": "" },
+    { "item": "Goddess Jewel", "asset_image": "ore_icons/goddess_jewel.png", "mine": "Spring", "floor_min": 152, "floor_max": 152, "method": "Break Rocks", "requirement": "" },
+    { "item": "Goddess Jewel", "asset_image": "ore_icons/goddess_jewel.png", "mine": "Spring", "floor_min": 155, "floor_max": 155, "method": "Break Rocks", "requirement": "" },
+    { "item": "Goddess Jewel", "asset_image": "ore_icons/goddess_jewel.png", "mine": "Spring", "floor_min": 171, "floor_max": 171, "method": "Break Rocks", "requirement": "" },
+    { "item": "Goddess Jewel", "asset_image": "ore_icons/goddess_jewel.png", "mine": "Spring", "floor_min": 190, "floor_max": 190, "method": "Break Rocks", "requirement": "" },
+    { "item": "Goddess Jewel", "asset_image": "ore_icons/goddess_jewel.png", "mine": "Spring", "floor_min": 202, "floor_max": 202, "method": "Break Rocks", "requirement": "" },
+    { "item": "Goddess Jewel", "asset_image": "ore_icons/goddess_jewel.png", "mine": "Spring", "floor_min": 222, "floor_max": 222, "method": "Break Rocks", "requirement": "" },
+
+    { "item": "Goddess Statue", "asset_image": "ore_icons/goddess_statue.png", "mine": "Spring", "floor_min": 220, "floor_max": 249, "method": "Hoe Dirt", "requirement": "" },
+
+    { "item": "Nature Sprite Statue", "asset_image": "ore_icons/nature_sprite_statue.png", "mine": "Spring", "floor_min": 160, "floor_max": 189, "method": "Hoe Dirt", "requirement": "" },
+
+    { "item": "Mythic Ore", "asset_image": "ore_icons/mythic_ore.png", "mine": "Spring", "floor_min": 60, "floor_max": 60, "method": "Break Rocks", "requirement": "Break rocks with Blessed or Mythic Hammer" },
+    { "item": "Mythic Ore", "asset_image": "ore_icons/mythic_ore.png", "mine": "Spring", "floor_min": 102, "floor_max": 102, "method": "Break Rocks", "requirement": "Break rocks with Blessed or Mythic Hammer" },
+    { "item": "Mythic Ore", "asset_image": "ore_icons/mythic_ore.png", "mine": "Spring", "floor_min": 123, "floor_max": 123, "method": "Break Rocks", "requirement": "Break rocks with Blessed or Mythic Hammer" },
+    { "item": "Mythic Ore", "asset_image": "ore_icons/mythic_ore.png", "mine": "Spring", "floor_min": 152, "floor_max": 152, "method": "Break Rocks", "requirement": "Break rocks with Blessed or Mythic Hammer" },
+    { "item": "Mythic Ore", "asset_image": "ore_icons/mythic_ore.png", "mine": "Spring", "floor_min": 155, "floor_max": 155, "method": "Break Rocks", "requirement": "Break rocks with Blessed or Mythic Hammer" },
+    { "item": "Mythic Ore", "asset_image": "ore_icons/mythic_ore.png", "mine": "Spring", "floor_min": 171, "floor_max": 171, "method": "Break Rocks", "requirement": "Break rocks with Blessed or Mythic Hammer" },
+    { "item": "Mythic Ore", "asset_image": "ore_icons/mythic_ore.png", "mine": "Spring", "floor_min": 190, "floor_max": 190, "method": "Break Rocks", "requirement": "Break rocks with Blessed or Mythic Hammer" },
+    { "item": "Mythic Ore", "asset_image": "ore_icons/mythic_ore.png", "mine": "Spring", "floor_min": 202, "floor_max": 202, "method": "Break Rocks", "requirement": "Break rocks with Blessed or Mythic Hammer" },
+    { "item": "Mythic Ore", "asset_image": "ore_icons/mythic_ore.png", "mine": "Spring", "floor_min": 222, "floor_max": 222, "method": "Break Rocks", "requirement": "Break rocks with Blessed or Mythic Hammer" },
+    { "item": "Mythic Ore", "asset_image": "ore_icons/mythic_ore.png", "mine": "Spring", "floor_min": 231, "floor_max": 255, "method": "Break Rocks", "requirement": "Break rocks with Blessed or Mythic Hammer" },
+
+    { "item": "Tomatosetta Stone", "asset_image": "ore_icons/tomatosetta_stone.png", "mine": "Spring", "floor_min": 255, "floor_max": 255, "method": "Hoe Dirt", "requirement": "", "notes": "Wiki notes roughly a 19.5% chance per tilled patch on this floor -- not treated as a Requirement, kept here as supplementary context" },
+
+    { "item": "Travel Stone", "asset_image": "ore_icons/travel_stone.png", "mine": "Spring", "floor_min": 255, "floor_max": 255, "method": "Break Rocks", "requirement": "Year 3 or Later" },
+
+    { "item": "Kappa Statue", "asset_image": "ore_icons/kappa_statue.png", "mine": "Lake", "floor_min": 101, "floor_max": 120, "method": "Hoe Dirt", "requirement": "Can only be found once per game", "notes": "Mine/floor/method/requirement not given as structured data on the wiki -- derived directly from the wiki page's prose, unlike every other item in this table" },
+
+    { "item": "Pink Diamond", "asset_image": "ore_icons/pink_diamond.png", "mine": "Lake", "floor_min": 30, "floor_max": 30, "method": "Break Rocks", "requirement": "" },
+    { "item": "Pink Diamond", "asset_image": "ore_icons/pink_diamond.png", "mine": "Lake", "floor_min": 70, "floor_max": 70, "method": "Break Rocks", "requirement": "" },
+    { "item": "Pink Diamond", "asset_image": "ore_icons/pink_diamond.png", "mine": "Lake", "floor_min": 90, "floor_max": 90, "method": "Break Rocks", "requirement": "" },
+    { "item": "Pink Diamond", "asset_image": "ore_icons/pink_diamond.png", "mine": "Lake", "floor_min": 110, "floor_max": 110, "method": "Break Rocks", "requirement": "" },
+    { "item": "Pink Diamond", "asset_image": "ore_icons/pink_diamond.png", "mine": "Lake", "floor_min": 130, "floor_max": 130, "method": "Break Rocks", "requirement": "" },
+    { "item": "Pink Diamond", "asset_image": "ore_icons/pink_diamond.png", "mine": "Lake", "floor_min": 170, "floor_max": 170, "method": "Break Rocks", "requirement": "" },
+    { "item": "Pink Diamond", "asset_image": "ore_icons/pink_diamond.png", "mine": "Lake", "floor_min": 190, "floor_max": 190, "method": "Break Rocks", "requirement": "" },
+    { "item": "Pink Diamond", "asset_image": "ore_icons/pink_diamond.png", "mine": "Lake", "floor_min": 210, "floor_max": 210, "method": "Break Rocks", "requirement": "" },
+    { "item": "Pink Diamond", "asset_image": "ore_icons/pink_diamond.png", "mine": "Lake", "floor_min": 220, "floor_max": 220, "method": "Break Rocks", "requirement": "" },
+    { "item": "Pink Diamond", "asset_image": "ore_icons/pink_diamond.png", "mine": "Lake", "floor_min": 230, "floor_max": 230, "method": "Break Rocks", "requirement": "" },
+    { "item": "Pink Diamond", "asset_image": "ore_icons/pink_diamond.png", "mine": "Lake", "floor_min": 240, "floor_max": 240, "method": "Break Rocks", "requirement": "" },
+    { "item": "Pink Diamond", "asset_image": "ore_icons/pink_diamond.png", "mine": "Lake", "floor_min": 250, "floor_max": 255, "method": "Break Rocks", "requirement": "" },
+
+    { "item": "Alexandrite", "asset_image": "ore_icons/alexandrite.png", "mine": "Lake", "floor_min": 50, "floor_max": 50, "method": "Break Rocks", "requirement": "Winter only", "notes": "Wiki: 'can only be found deep within the Lake Mine during Winter' -- extremely rare, typically at most one per floor" },
+    { "item": "Alexandrite", "asset_image": "ore_icons/alexandrite.png", "mine": "Lake", "floor_min": 100, "floor_max": 100, "method": "Break Rocks", "requirement": "Winter only" },
+    { "item": "Alexandrite", "asset_image": "ore_icons/alexandrite.png", "mine": "Lake", "floor_min": 150, "floor_max": 150, "method": "Break Rocks", "requirement": "Winter only" },
+    { "item": "Alexandrite", "asset_image": "ore_icons/alexandrite.png", "mine": "Lake", "floor_min": 200, "floor_max": 200, "method": "Break Rocks", "requirement": "Winter only" },
+    { "item": "Alexandrite", "asset_image": "ore_icons/alexandrite.png", "mine": "Lake", "floor_min": 210, "floor_max": 210, "method": "Break Rocks", "requirement": "Winter only" },
+    { "item": "Alexandrite", "asset_image": "ore_icons/alexandrite.png", "mine": "Lake", "floor_min": 220, "floor_max": 220, "method": "Break Rocks", "requirement": "Winter only" },
+    { "item": "Alexandrite", "asset_image": "ore_icons/alexandrite.png", "mine": "Lake", "floor_min": 230, "floor_max": 230, "method": "Break Rocks", "requirement": "Winter only" },
+    { "item": "Alexandrite", "asset_image": "ore_icons/alexandrite.png", "mine": "Lake", "floor_min": 240, "floor_max": 240, "method": "Break Rocks", "requirement": "Winter only" },
+    { "item": "Alexandrite", "asset_image": "ore_icons/alexandrite.png", "mine": "Lake", "floor_min": 250, "floor_max": 255, "method": "Break Rocks", "requirement": "Winter only" }
+  ]
+}

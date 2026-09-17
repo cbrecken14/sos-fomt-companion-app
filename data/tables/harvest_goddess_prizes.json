@@ -1,0 +1,21 @@
+{
+  "_source": "https://stratswiki.com/sos-fomt/tips-extras/harvest-goddess-high-low-game/",
+  "_note": "Static wiki reference data: a live lookup table so the Reminders/companion app can tell the player what they'd win if they stopped the Harvest Goddess High-Low minigame right now. Stored as ascending tier MINIMUMS only (same convention as heart_levels.json/friendship_notes.json): to find the prize for a given win streak, find the tier with the LARGEST 'win_streak_min' that is <= the current streak. The 100+ tier is open-ended (no upper bound needed with this lookup convention).",
+  "HARVEST_GODDESS_PRIZES": [
+    { "win_streak_min": 0, "prize": "No prize" },
+    { "win_streak_min": 2, "prize": "Either a Blue, Green, Red, Yellow, Orange, Purple, Indigo, Black, or White Grass" },
+    { "win_streak_min": 3, "prize": "Mochi or Buckwheat Flour" },
+    { "win_streak_min": 10, "prize": "Relax Tea Leaves" },
+    { "win_streak_min": 15, "prize": "Sunscreen" },
+    { "win_streak_min": 20, "prize": "Lotion" },
+    { "win_streak_min": 25, "prize": "Face Pack" },
+    { "win_streak_min": 30, "prize": "Perfume" },
+    { "win_streak_min": 40, "prize": "Dress" },
+    { "win_streak_min": 50, "prize": "Golden Lumber" },
+    { "win_streak_min": 60, "prize": "Ancient Fossil" },
+    { "win_streak_min": 70, "prize": "Pirate Treasure" },
+    { "win_streak_min": 80, "prize": "Message in a Bottle" },
+    { "win_streak_min": 90, "prize": "Tomatosetta Stone" },
+    { "win_streak_min": 100, "prize": "Book of 100 Wins" }
+  ]
+}

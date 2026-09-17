@@ -1,0 +1,21 @@
+{
+  "_source": "https://stratswiki.com/sos-fomt/shops/",
+  "_note": "Static wiki reference data for the planned Reminders feature. Not memory-derived. 'days_closed' is an array of weekday name strings (e.g. ['Saturday']) for a shop's regular weekly closure; the Reminders feature looks up 'which shops are closed today' by checking whether today's weekday name appears in each shop's array. An empty array means the shop has no regular weekly closure (open every non-festival day). By design, festival closures are NOT tracked here at all -- every shop is assumed closed on festival days without needing to say so. Two shops don't fit a plain weekday model and carry a 'notes' field instead/in addition: Beach Cafe (seasonal -- only operates in Summer) and Van's Pet Shop (opens by day-of-month, not weekday -- modeled by app/windows/reminders.py's own _SPECIAL_SHOP_OPEN_RULES, not expressible via days_closed; Van's Pet Shop no longer has its own other_events.json entry, removed 2026-09-18 as a duplicate of this shop's own open/closed line). Van's Shop (Inn) hours confirmed as the wiki's '8:00 AM - 9:00 PM' (an earlier '10:00 PM' correction was itself wrong and has been reverted here). 'url' is each shop's own stratswiki page where one exists (Beach Cafe, Church, Harvest Sprite Hut, Inn, and Library have none, confirmed by checking the shops list page's links -- these fall back to the shops list page itself, https://stratswiki.com/sos-fomt/shops/, by design).",
+  "SHOPS": [
+    { "name": "Adge Winery", "hours": "10:00 AM - 12:00 PM", "days_closed": ["Saturday"], "url": "https://stratswiki.com/sos-fomt/shops/adge-winery/" },
+    { "name": "Beach Cafe", "hours": "11:00 AM - 1:00 PM and 5:00 PM - 7:00 PM", "days_closed": ["Sunday"], "notes": "Only open during Summer; closed every day in Spring, Fall, and Winter (not expressible as a days_closed weekday list)", "url": "https://stratswiki.com/sos-fomt/shops/" },
+    { "name": "Clinic", "hours": "9:00 AM - 4:00 PM", "days_closed": ["Wednesday"], "url": "https://stratswiki.com/sos-fomt/shops/clinic/" },
+    { "name": "Church", "hours": "10:00 AM - 7:00 PM", "days_closed": [], "url": "https://stratswiki.com/sos-fomt/shops/" },
+    { "name": "Forge", "hours": "10:00 AM - 4:00 PM", "days_closed": ["Thursday"], "url": "https://stratswiki.com/sos-fomt/shops/the-forge/" },
+    { "name": "Gotts' Workshop", "hours": "11:00 AM - 4:00 PM", "days_closed": ["Saturday"], "url": "https://stratswiki.com/sos-fomt/shops/gotts-workshop/" },
+    { "name": "Harvest Sprite Hut", "hours": "9:00 AM - 5:00 PM", "days_closed": [], "url": "https://stratswiki.com/sos-fomt/shops/" },
+    { "name": "Huang's Shop", "hours": "11:00 AM - 4:00 PM", "days_closed": [], "url": "https://stratswiki.com/sos-fomt/shops/huangs-shop/" },
+    { "name": "General Store", "hours": "9:00 AM - 5:00 PM", "days_closed": ["Tuesday", "Sunday"], "url": "https://stratswiki.com/sos-fomt/shops/general-store/" },
+    { "name": "Inn", "hours": "8:00 AM - 9:00 PM", "days_closed": [], "url": "https://stratswiki.com/sos-fomt/shops/" },
+    { "name": "Library", "hours": "10:00 AM - 4:00 PM", "days_closed": ["Monday"], "url": "https://stratswiki.com/sos-fomt/shops/" },
+    { "name": "PoPoultry", "hours": "11:00 AM - 4:00 PM", "days_closed": ["Sunday"], "url": "https://stratswiki.com/sos-fomt/shops/popoultry/" },
+    { "name": "Van's Pet Shop", "hours": "12:00 PM - 6:00 PM (Must be Sunny)", "days_closed": [], "notes": "Only open on Day 15 of each season -- a day-of-month rule, not a weekday rule, so it can't be represented as a days_closed weekday list. See other_events.json's 'Van's Pet Shop' entry for the exact date_condition.", "url": "https://stratswiki.com/sos-fomt/shops/vans-pet-shop/" },
+    { "name": "Van's Shop (Inn)", "hours": "8:00 AM - 9:00 PM (Wednesdays)", "days_closed": ["Sunday", "Monday", "Tuesday", "Thursday", "Friday", "Saturday"], "url": "https://stratswiki.com/sos-fomt/shops/vans-inn-shop/" },
+    { "name": "Yodel Ranch", "hours": "10:00 AM - 3:00 PM", "days_closed": ["Monday"], "url": "https://stratswiki.com/sos-fomt/shops/yodel-ranch/" }
+  ]
+}

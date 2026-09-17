@@ -1,0 +1,58 @@
+{
+  "FIELDS": [
+    { "struct": "time", "name": "Weather", "offset": -8, "size": 1, "calc": "weather" },
+    { "struct": "time", "name": "Next Weather", "offset": -4, "size": 1, "calc": "weather" },
+    { "struct": "time", "name": "Year (x1)", "offset": 0, "size": 1 },
+    { "struct": "time", "name": "Year (x7)", "offset": 4, "size": 1 },
+    { "struct": "time", "name": "Season", "offset": 8, "size": 1, "calc": "season" },
+    { "struct": "time", "name": "Day", "offset": 12, "size": 1, "calc": "day" },
+    { "struct": "time", "name": "Hour", "offset": 16, "size": 1 },
+    { "struct": "time", "name": "Minute", "offset": 17, "size": 1 },
+
+    { "struct": "saveHeader", "name": "Farm Name", "offset": 72, "type": "utf16", "length": 10, "size": 20, "verified": false },
+
+    { "struct": "saveHeader", "name": "Horse Location", "offset": 472, "size": 4, "calc": "location" },
+    { "struct": "saveHeader", "name": "Horse X Position", "offset": 476, "type": "float", "size": 4 },
+    { "struct": "saveHeader", "name": "Horse Y Position", "offset": 480, "type": "float", "size": 4 },
+    { "struct": "saveHeader", "name": "Horse Facing Direction", "offset": 484, "size": 4, "calc": "facing" },
+    { "struct": "saveHeader", "name": "Horse Name", "offset": 492, "type": "utf16", "length": 10, "size": 20, "verified": false },
+    { "struct": "saveHeader", "name": "Horse Age", "offset": 884, "size": 4, "verified": false },
+    { "struct": "saveHeader", "name": "Horse Affection", "offset": 892, "size": 4, "verified": false },
+
+    { "struct": "saveData", "name": "Money", "offset": 48208, "size": 4 },
+
+    { "struct": "saveData", "name": "Player Name (UTF-16)", "offset": 48360, "type": "utf16", "length": 8, "size": 16 },
+    { "struct": "saveData", "name": "Player Name (UTF-32, alt copy)", "offset": 48492, "type": "utf32", "length": 8, "size": 32 },
+
+    { "struct": "saveData", "name": "Item ID in Hand", "offset": 49364, "size": 4, "calc": "item" },
+
+    { "struct": "saveData", "name": "Highlighted Item Crop Quality (candidate)", "offset": 49376, "size": 1, "verified": false },
+
+    { "struct": "saveData", "name": "Player X Position", "offset": 49188, "type": "float", "size": 4 },
+    { "struct": "saveData", "name": "Player Y Position", "offset": 49192, "type": "float", "size": 4 },
+
+    { "struct": "saveData", "name": "Selected Bag Slot", "offset": 49456, "size": 2, "calc": "bagSlot" },
+    { "struct": "saveData", "name": "Selected Bag Slot (alt, +2 bytes)", "offset": 49458, "size": 2, "verified": false, "calc": "bagSlot" },
+
+    { "struct": "saveData", "name": "Current Location", "offset": 49184, "size": 4, "calc": "location" },
+    { "struct": "saveData", "name": "Facing Direction", "offset": 49196, "size": 4, "calc": "facing" },
+    { "struct": "saveData", "name": "Hoe EXP", "offset": 49200, "size": 4 },
+    { "struct": "saveData", "name": "Sickle EXP", "offset": 49216, "size": 4 },
+    { "struct": "saveData", "name": "Axe EXP", "offset": 49232, "size": 4 },
+    { "struct": "saveData", "name": "Hammer EXP", "offset": 49248, "size": 4 },
+    { "struct": "saveData", "name": "Watering Can EXP", "offset": 49264, "size": 4 },
+    { "struct": "saveData", "name": "Fishing Rod EXP", "offset": 49280, "size": 4 },
+    { "struct": "saveData", "name": "Current Stamina", "offset": 49302, "size": 2 },
+    { "struct": "saveData", "name": "Fatigue", "offset": 49304, "size": 2 },
+    { "struct": "saveData", "name": "Spring Mine Depth Record", "offset": 49320, "size": 2 },
+    { "struct": "saveData", "name": "Winter Mine Depth Record", "offset": 49322, "size": 2 },
+    { "struct": "saveData", "name": "Mole Hit Count", "offset": 49324, "size": 4 },
+
+    { "struct": "mineFloor", "name": "Tile [0,0] State", "offset": 0, "size": 4 },
+    { "struct": "mineFloor", "name": "Tile [0,0] Rock Content", "offset": 4, "size": 4 },
+    { "struct": "mineFloor", "name": "Tile [0,0] Soil Content", "offset": 8, "size": 4 }
+  ],
+  "TAIL_ROWS_OVERRIDE": { "saveHeader": 20 },
+  "HEAD_PADDING_ROWS": { "mineFloor": 50 },
+  "STRUCT_PRIORITY": { "saveHeader": 0, "saveData": 0, "time": 1, "mineFloor": 2 }
+}

@@ -1,0 +1,3 @@
+frida
+pywin32
+PySide6

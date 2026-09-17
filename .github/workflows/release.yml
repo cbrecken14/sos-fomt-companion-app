@@ -1,0 +1,67 @@
+name: Build and Release
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install pyinstaller
+
+      - name: Build the app
+        run: >
+          pyinstaller run.py --name "SoS-FoMT-Companion" --onedir --windowed
+          --add-data "src;src"
+          --add-data "assets;assets"
+          --add-data "data;data"
+          --noconfirm
+
+      # Qt ships plenty this app never uses (translation files, QtQuick/Qml/Pdf, TLS/network-
+      # info plugins) -- PySide6 pulls them in regardless of what's actually imported. Trimming
+      # them is a packaging-only change (nothing about the app's own code changes), verified
+      # locally to still launch cleanly with these removed.
+      - name: Trim unused Qt pieces
+        shell: pwsh
+        run: |
+          $pyside = "dist/SoS-FoMT-Companion/_internal/PySide6"
+          Remove-Item -Recurse -Force "$pyside/translations" -ErrorAction SilentlyContinue
+          Remove-Item -Recurse -Force "$pyside/plugins/tls" -ErrorAction SilentlyContinue
+          Remove-Item -Recurse -Force "$pyside/plugins/networkinformation" -ErrorAction SilentlyContinue
+          Remove-Item -Force "$pyside/Qt6Quick.dll" -ErrorAction SilentlyContinue
+          Remove-Item -Force "$pyside/Qt6Qml.dll" -ErrorAction SilentlyContinue
+          Remove-Item -Force "$pyside/Qt6Pdf.dll" -ErrorAction SilentlyContinue
+
+      - name: Zip the build
+        shell: pwsh
+        run: Compress-Archive -Path "dist/SoS-FoMT-Companion/*" -DestinationPath "SoS-FoMT-Companion-windows.zip"
+
+      # Manual test runs (workflow_dispatch) just produce a downloadable artifact on the run's
+      # summary page, so the pipeline can be checked without ever creating a real Release.
+      - name: Upload build artifact (manual test runs)
+        if: github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: SoS-FoMT-Companion-windows
+          path: SoS-FoMT-Companion-windows.zip
+
+      # Real releases (triggered by publishing a Release on GitHub) attach the zip as a download.
+      - name: Attach to release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: SoS-FoMT-Companion-windows.zip

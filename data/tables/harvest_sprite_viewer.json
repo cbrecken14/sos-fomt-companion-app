@@ -1,0 +1,23 @@
+{
+  "SPRITES": [
+    { "id": 46, "name": "Blueberry", "offset": 3108 },
+    { "id": 47, "name": "Pumpkin", "offset": 3188 },
+    { "id": 48, "name": "Plum", "offset": 3268 },
+    { "id": 49, "name": "Cherry", "offset": 3348 },
+    { "id": 50, "name": "Aqua", "offset": 3428 },
+    { "id": 51, "name": "Sunny", "offset": 3508 },
+    { "id": 52, "name": "Mint", "offset": 3588 }
+  ],
+  "TASK_NAMES": ["Harvest Crops", "Watering", "Animal Care", "Not Assigned"],
+  "KNOWN_FIELDS": [
+    { "name": "Location", "offset": 0, "size": 4 },
+    { "name": "Spawn X", "offset": 4, "size": 4, "type": "float" },
+    { "name": "Spawn Y", "offset": 8, "size": 4, "type": "float" },
+    { "name": "Spawn Facing Direction", "offset": 12, "size": 4 },
+    { "name": "Status", "offset": 24, "size": 4, "calc": "decodeStatus" },
+    { "name": "Character ID", "offset": 28, "size": 1, "notes": "Size unconfirmed against the field's own setter -- see data/pointer_map.md. Same +0x1C offset/concept as the villager/marriage-candidate Internal ID field. Values: 46=Blueberry, 47=Pumpkin, 48=Plum, 49=Cherry, 50=Aqua, 51=Sunny, 52=Mint" },
+    { "name": "Skill Levels", "offset": 56, "size": 4, "calc": "decodeSkills" },
+    { "name": "Task Assignment", "offset": 64, "size": 4, "calc": "decodeTask" },
+    { "name": "Days Left (work assignment)", "offset": 68, "size": 1 }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "_source": "In-game knowledge -- not on the stratswiki LP/Heart Levels page, which doesn't cover the FP-to-notes ratio",
+  "_note": "Converts a villager's raw Friendship Points (FP) memory value (byte, 0-255 -- matches data/pointer_map.md's confirmed 'Friendship Level 0-255 (+0x10)' field) into its displayed music-note count (0-10). Stored as ascending tier MINIMUMS, same lookup convention as heart_levels.json: find the tier with the LARGEST 'min_fp' that is <= the value. Every tier is a 25-point band except the last, which covers 250-255 (6 values) since 255 is the field's hard maximum.",
+  "FRIENDSHIP_NOTES": [
+    { "notes": 0, "min_fp": 0 },
+    { "notes": 1, "min_fp": 25 },
+    { "notes": 2, "min_fp": 50 },
+    { "notes": 3, "min_fp": 75 },
+    { "notes": 4, "min_fp": 100 },
+    { "notes": 5, "min_fp": 125 },
+    { "notes": 6, "min_fp": 150 },
+    { "notes": 7, "min_fp": 175 },
+    { "notes": 8, "min_fp": 200 },
+    { "notes": 9, "min_fp": 225 },
+    { "notes": 10, "min_fp": 250 }
+  ]
+}

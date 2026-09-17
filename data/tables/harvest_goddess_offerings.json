@@ -1,0 +1,13 @@
+{
+  "_source": "https://stratswiki.com/sos-fomt/villagers/harvest-goddess/",
+  "_note": "Static wiki reference data: milestone rewards for cumulative offerings given to the Harvest Goddess (see data/pointer_map.md's 'Harvest Goddess Total/Consecutive Liked/Loved Gifts' pointers for the live memory value this maps against). Unlike the Heart Level/Friendship/Affection tables, these are discrete one-time milestones rather than continuous tiers, so rows are stored as literal (offerings_given, reward_received) pairs -- no min/max banding needed. A live lookup can find the next unclaimed threshold (smallest offerings_given > current count) or the most recently crossed one (largest offerings_given <= current count), whichever the Reminders feature wants to surface.",
+  "HARVEST_GODDESS_OFFERINGS": [
+    { "offerings_given": 10, "reward_received": "Power Berry" },
+    { "offerings_given": 20, "reward_received": "Friendship boost with a villager" },
+    { "offerings_given": 30, "reward_received": "Van unlocked, White Grass" },
+    { "offerings_given": 50, "reward_received": "Interesting Book" },
+    { "offerings_given": 75, "reward_received": "Lou unlocked, Really Interesting Book" },
+    { "offerings_given": 100, "reward_received": "Mine Elevator unlocked, Super Fascinating Book" },
+    { "offerings_given": 150, "reward_received": "Seaside Cottage" }
+  ]
+}

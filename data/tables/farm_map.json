@@ -1,0 +1,35 @@
+{
+  "CORNER_ORDER": ["top_left", "top_right", "bottom_right", "bottom_left"],
+  "DEFAULT_CORNERS": {
+    "top_left": [333.0, 186.0],
+    "top_right": [1112.0, 186.0],
+    "bottom_right": [1169.0, 653.0],
+    "bottom_left": [306.0, 651.0]
+  },
+  "STATE_COLORS": {
+    "0": "#f1b26a",
+    "1": "#5a3d1f",
+    "2": "#2a5a8a"
+  },
+  "STATE_ICON_FILES": {
+    "0": "Blank farm tile.png",
+    "1": "Tilled Tile.png",
+    "2": "Watered Tilled Tile.png"
+  },
+  "DEBRIS_ICON_FILES": {
+    "24": "Weed.png",
+    "25": "Stone.png",
+    "26": "Branch.png",
+    "27": "Wood Fence.png"
+  },
+  "LARGE_OBJECT_GROUPS": [
+    { "ids": [30, 31, 32, 33], "file": "4 tile light brown stump.png" },
+    { "ids": [34, 35, 36, 37], "file": "Large Boulder - Lowest Level.png" },
+    { "ids": [38, 39, 40, 41], "file": "Large Boulder - 2nd level.png" },
+    { "ids": [42, 43, 44, 45], "file": "Large Boulder - 3rdd level.png" },
+    { "ids": [46, 47, 48, 49], "file": "4 tile dark brown stump.png" }
+  ],
+  "CROP_ICON_FILES": {
+    "23": "Grass.png"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_source": "https://stratswiki.com/sos-fomt/festivals/",
+  "_note": "Static wiki reference data for the planned Reminders feature. Not memory-derived. 'season' uses the same naming as enums.json's SEASON table ('Fall', not the wiki's 'Autumn') so it can be matched directly against the game's own Current Season value. 'day' is the numeric day of that season (1-30), matching the game's Current Day field. Confirmed accurate against the wiki. 'url' is each festival's individual stratswiki page, pulled directly from the festivals list page's own links -- both Horse Derby entries and both New Year's entries intentionally share one URL each, since the wiki covers each of those pairs on a single page.",
+  "FESTIVALS": [
+    { "festival": "Mochi Bonanza", "season": "Spring", "day": 1, "time": "6:00 PM - 12:00 AM", "location": "Rose Plaza", "url": "https://stratswiki.com/sos-fomt/festivals/mochi-bonanza/" },
+    { "festival": "White Day", "season": "Spring", "day": 14, "time": "6:00 AM - 5:00 PM", "location": "Your Farm", "url": "https://stratswiki.com/sos-fomt/festivals/white-day/" },
+    { "festival": "Horse Derby - Spring", "season": "Spring", "day": 18, "time": "10:00 AM - 6:00 PM", "location": "Rose Plaza", "url": "https://stratswiki.com/sos-fomt/festivals/horse-derby/" },
+    { "festival": "Cooking Exhibition", "season": "Spring", "day": 22, "time": "10:00 AM - 6:00 PM", "location": "Rose Plaza", "url": "https://stratswiki.com/sos-fomt/festivals/cooking-exhibition/" },
+    { "festival": "Fetch Fest", "season": "Summer", "day": 1, "time": "10:00 AM - 6:00 PM", "location": "Mineral Beach", "url": "https://stratswiki.com/sos-fomt/festivals/fetch-fest/" },
+    { "festival": "Cluck-Cluck Clash", "season": "Summer", "day": 7, "time": "10:00 AM - 6:00 PM", "location": "Rose Plaza", "url": "https://stratswiki.com/sos-fomt/festivals/cluck-cluck-clash/" },
+    { "festival": "Moo-Moo Festival", "season": "Summer", "day": 20, "time": "10:00 AM - 6:00 PM", "location": "Rose Plaza", "url": "https://stratswiki.com/sos-fomt/festivals/moo-moo-festival/" },
+    { "festival": "Fireworks Festival", "season": "Summer", "day": 24, "time": "6:00 PM - 9:00 PM", "location": "Mineral Beach", "url": "https://stratswiki.com/sos-fomt/festivals/fireworks-festival/" },
+    { "festival": "Concert", "season": "Fall", "day": 3, "time": "6:00 PM - 12:00 AM", "location": "Mineral Church", "url": "https://stratswiki.com/sos-fomt/festivals/concert-festival/" },
+    { "festival": "Harvest Festival", "season": "Fall", "day": 9, "time": "10:00 AM - 6:00 PM", "location": "Rose Plaza", "url": "https://stratswiki.com/sos-fomt/festivals/harvest-festival/" },
+    { "festival": "Moonlight Night", "season": "Fall", "day": 13, "time": "6:00 PM - 12:00 AM", "location": "The Summit", "url": "https://stratswiki.com/sos-fomt/festivals/moonlight-night/" },
+    { "festival": "Horse Derby - Fall", "season": "Fall", "day": 18, "time": "10:00 AM - 6:00 PM", "location": "Rose Plaza", "url": "https://stratswiki.com/sos-fomt/festivals/horse-derby/" },
+    { "festival": "Fluffy Festival", "season": "Fall", "day": 21, "time": "10:00 AM - 6:00 PM", "location": "Rose Plaza", "url": "https://stratswiki.com/sos-fomt/festivals/fluffy-festival/" },
+    { "festival": "Pumpkin Jamboree", "season": "Fall", "day": 30, "time": "6:00 AM onwards", "location": "Your Farm", "url": "https://stratswiki.com/sos-fomt/festivals/pumpkin-jamboree/" },
+    { "festival": "Valentine's Day", "season": "Winter", "day": 14, "time": "6:00 AM - 5:00 PM", "location": "Your Farm", "url": "https://stratswiki.com/sos-fomt/festivals/valentines-day/" },
+    { "festival": "Starlight Night", "season": "Winter", "day": 24, "time": "6:00 PM - 12:00 AM", "location": "Varies", "url": "https://stratswiki.com/sos-fomt/festivals/starlight-night/" },
+    { "festival": "New Year's Soba", "season": "Winter", "day": 30, "time": "6:00 PM - 12:00 AM", "location": "Rose Plaza", "url": "https://stratswiki.com/sos-fomt/festivals/new-years-festivals/" },
+    { "festival": "New Year's Party", "season": "Winter", "day": 30, "time": "12:00 AM - 4:00 AM", "location": "Summit of Mother's Hill", "url": "https://stratswiki.com/sos-fomt/festivals/new-years-festivals/" }
+  ]
+}
